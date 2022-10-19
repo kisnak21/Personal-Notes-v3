@@ -18,11 +18,13 @@ function LoginInput({ login }) {
         id='email'
         type='email'
         value={email}
+        placeholder='email'
         onChange={onEmailHandler}
         required
       />
       <input
         type='password'
+        placeholder='password'
         value={password}
         onChange={onPasswordHandler}
         required

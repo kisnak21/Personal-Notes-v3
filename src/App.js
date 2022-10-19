@@ -110,7 +110,7 @@ function App() {
                   path={login}
                   element={<LoginPage loginSuccess={onLoginSucces} />}
                 />
-                <Route path='/register' element={<RegisterPage />} />
+                <Route path={register} element={<RegisterPage />} />
               </Routes>
             </main>
           </div>
