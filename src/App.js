@@ -15,12 +15,12 @@ import RegisterPage from "./pages/RegisterPage";
 import { getUserLogged, putAccessToken } from "./utils/network-data";
 
 function App() {
-  // const home = "/";
-  // const login = "/*";
-  // const register = "/register";
-  // const archives = "/archives";
-  // const add = "/notes/new";
-  // const detail = "/notes/:id";
+  const home = "/";
+  const login = "/*";
+  const register = "/register";
+  const archives = "/archives";
+  const add = "/notes/new";
+  const detail = "/notes/:id";
 
   const [authedUser, setAuthedUser] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -97,7 +97,7 @@ function App() {
           <div className='app-container'>
             <header>
               <h1>
-                <Link to='/'>
+                <Link to={home}>
                   {locale === "id" ? "Aplikasi Catatan" : "Notes App"}
                 </Link>
               </h1>
@@ -107,7 +107,7 @@ function App() {
             <main>
               <Routes>
                 <Route
-                  path='/'
+                  path={login}
                   element={<LoginPage loginSuccess={onLoginSucces} />}
                 />
                 <Route path='/register' element={<RegisterPage />} />
@@ -125,7 +125,7 @@ function App() {
         <div className='app-container'>
           <header>
             <h1>
-              <Link to='/'>
+              <Link to={home}>
                 {locale === "id" ? "Aplikasi Catatan" : "Notes App"}
               </Link>
             </h1>
@@ -136,10 +136,10 @@ function App() {
           </header>
           <main>
             <Routes>
-              <Route path='/' element={<HomePage />} />
-              <Route path='/archives' element={<ArchivePage />} />
-              <Route path='/notes/new' element={<AddPage />} />
-              <Route path='/notes/:id' element={<DetailPage />} />
+              <Route path={home} element={<HomePage />} />
+              <Route path={archives} element={<ArchivePage />} />
+              <Route path={add} element={<AddPage />} />
+              <Route path={detail} element={<DetailPage />} />
             </Routes>
           </main>
         </div>
